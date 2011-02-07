@@ -1,0 +1,57 @@
+.TH KILLALL5 8 "18 Oct 1999" "mintinit version 0.1" "MiNT System Administrator's Manual"
+.SH NAME
+killall5 -- send a signal to (almost) all processes.
+.SH SYNOPSIS
+.B killall5
+.RB -signalnumber
+.SH DESCRIPTION
+.B killall5
+is the SystemV killall command. It sends a signal to all processes except
+the processes in its own session, so it won't kill the shell that is
+running the script it was called from. Its primary (only) use is in the
+\fBrc\fP scripts found in the /etc/rc.d directory.
+.PP
+If you have the vague idea that the program
+.B killall
+should really send a signal to named processes you are probably the BSD
+type of mind and should look at
+.BR killall (1)
+instead, the BSD version of this command. 
+.PP
+Under MiNT there is no real session concept and it is therefore impossible
+to detect whether a particular process belongs to our own session or not.
+But in fact the sole purpose of
+.B killall5
+is to kill
+.I tout le monde
+in the halt resp. reboot script while saving those processes that need to live
+on in order to finish the shutdown sequence.  Other implementations omit 
+special system processes that are known to be needed by the shutdown sequence
+(e. g. processes the commandline of which start with
+.I /etc/rc.d/rc
+or the like).
+.PP
+This version of
+.B killall sends the specified signal to all processes except
+.IP -
+the calling process itself
+.IP -
+all ancestors of the calling process (i. e. the parent, grand-parent,
+grand-grand-parent and so on)
+.IP -
+special system processes, namely the process IDs 1, 2 and 3, normally
+.B init, update 
+and 
+.B sld
+to avoid killing the operating system itself.
+.PP
+Users should never invoke
+.B killall5
+directly.  Its sole purpose is really the shutdown procedure.
+.SH SEE ALSO
+.BR halt (8),
+.BR reboot (8)
+.SH BUGS
+None, never, impossible (see AUTHOR below).
+.SH AUTHOR
+Guido Flohr (gufl0000@stud.uni-sb.de)

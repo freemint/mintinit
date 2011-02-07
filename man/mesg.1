@@ -1,0 +1,39 @@
+.\"{{{}}}
+.\"{{{  Title
+.TH MESG 1 "May 27, 1997" "" "Linux User's Manual"
+.\"}}}
+.\"{{{  Name
+.SH NAME
+mesg \- control write access to your terminal
+.\"}}}
+.\"{{{  Synopsis
+.SH SYNOPSIS
+.B mesg
+.RB [ y | n ]
+.\"}}}
+.\"{{{  Description
+.SH DESCRIPTION
+.B Mesg
+controls the access to your terminal by others.  It's typically used to
+allow or disallow other users to write to your terminal (see \fBwrite\fP(1)).
+.\"}}}
+.\"{{{  Options
+.SH OPTIONS
+.IP \fBy\fP
+Allow write access to your terminal.
+.IP \fBn\fP
+Disallow write access to your terminal.
+.PP
+If no option is given, \fBmesg\fP prints out the current access state of your
+terminal.
+.\"}}}
+.\"{{{  Author
+.SH AUTHOR
+Miquel van Smoorenburg (miquels@cistron.nl)
+.\"}}}
+.\"{{{  See also
+.SH "SEE ALSO"
+.BR talk (1),
+.BR write (1),
+.BR wall (1)
+.\"}}}

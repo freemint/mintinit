@@ -1,0 +1,5 @@
+This is my notion of a more or less SysV compatible init suite.  It is
+widely based on the SysV init suite by Miquel von Smoorenburg
+(miquels@cistron.nl) but heavily rehacked for MiNT.
+
+Guido Flohr (guido@atari.org)

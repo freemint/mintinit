@@ -1,0 +1,403 @@
+# Makefile.in generated automatically by automake 1.4a from Makefile.am
+
+# Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+
+SHELL = @SHELL@
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+
+DESTDIR =
+
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+
+top_builddir = ..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+INSTALL_STRIP_FLAG =
+transform = @program_transform_name@
+
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+CC = @CC@
+MAKEINFO = @MAKEINFO@
+PACKAGE = @PACKAGE@
+VERSION = @VERSION@
+
+CFLAGS = -Wall @CFLAGS@
+DEFS = -D_GNU_SOURCE @DEFS@
+
+noinst_HEADERS = init.h initreq.h initpaths.h reboot.h set.h
+sbin_PROGRAMS = init runlevel halt shutdown killall5 sulogin
+bin_PROGRAMS = utmpdump last wall mesg
+
+init_SOURCES = init.c init_utmp.c
+halt_SOURCES = halt.c utmp.c ifdown.c
+shutdown_SOURCES = dowall.c utmp.c shutdown.c
+wall_SOURCES = dowall.c wall.c
+
+LIBS = @LIBS@ -lsocket
+
+INCLUDES = -I$(top_srcdir) -I$(srcdir) -I$(top_srcdir)/lib -I..
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+CONFIG_HEADER = ../config.h
+CONFIG_CLEAN_FILES = 
+PROGRAMS =  $(bin_PROGRAMS) $(sbin_PROGRAMS)
+
+CPPFLAGS = @CPPFLAGS@
+LDFLAGS = @LDFLAGS@
+utmpdump_SOURCES = utmpdump.c
+utmpdump_OBJECTS =  utmpdump.o
+utmpdump_LDADD = $(LDADD)
+utmpdump_DEPENDENCIES = 
+utmpdump_LDFLAGS = 
+last_SOURCES = last.c
+last_OBJECTS =  last.o
+last_LDADD = $(LDADD)
+last_DEPENDENCIES = 
+last_LDFLAGS = 
+wall_OBJECTS =  dowall.o wall.o
+wall_LDADD = $(LDADD)
+wall_DEPENDENCIES = 
+wall_LDFLAGS = 
+mesg_SOURCES = mesg.c
+mesg_OBJECTS =  mesg.o
+mesg_LDADD = $(LDADD)
+mesg_DEPENDENCIES = 
+mesg_LDFLAGS = 
+init_OBJECTS =  init.o init_utmp.o
+init_LDADD = $(LDADD)
+init_DEPENDENCIES = 
+init_LDFLAGS = 
+runlevel_SOURCES = runlevel.c
+runlevel_OBJECTS =  runlevel.o
+runlevel_LDADD = $(LDADD)
+runlevel_DEPENDENCIES = 
+runlevel_LDFLAGS = 
+halt_OBJECTS =  halt.o utmp.o ifdown.o
+halt_LDADD = $(LDADD)
+halt_DEPENDENCIES = 
+halt_LDFLAGS = 
+shutdown_OBJECTS =  dowall.o utmp.o shutdown.o
+shutdown_LDADD = $(LDADD)
+shutdown_DEPENDENCIES = 
+shutdown_LDFLAGS = 
+killall5_SOURCES = killall5.c
+killall5_OBJECTS =  killall5.o
+killall5_LDADD = $(LDADD)
+killall5_DEPENDENCIES = 
+killall5_LDFLAGS = 
+sulogin_SOURCES = sulogin.c
+sulogin_OBJECTS =  sulogin.o
+sulogin_LDADD = $(LDADD)
+sulogin_DEPENDENCIES = 
+sulogin_LDFLAGS = 
+COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+HEADERS =  $(noinst_HEADERS)
+
+DIST_COMMON =  Makefile.am Makefile.in
+
+
+DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+
+TAR = gtar
+GZIP_ENV = --best
+SOURCES = utmpdump.c last.c $(wall_SOURCES) mesg.c $(init_SOURCES) runlevel.c $(halt_SOURCES) $(shutdown_SOURCES) killall5.c sulogin.c
+OBJECTS = utmpdump.o last.o $(wall_OBJECTS) mesg.o $(init_OBJECTS) runlevel.o $(halt_OBJECTS) $(shutdown_OBJECTS) killall5.o sulogin.o
+
+all: all-redirect
+.SUFFIXES:
+.SUFFIXES: .S .c .o .s
+$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps src/Makefile
+
+Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) \
+	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
+
+mostlyclean-binPROGRAMS:
+
+clean-binPROGRAMS:
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+
+distclean-binPROGRAMS:
+
+maintainer-clean-binPROGRAMS:
+
+install-binPROGRAMS: $(bin_PROGRAMS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(bindir)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo "  $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
+	     $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+	  else :; fi; \
+	done
+
+uninstall-binPROGRAMS:
+	@$(NORMAL_UNINSTALL)
+	list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+	done
+
+mostlyclean-sbinPROGRAMS:
+
+clean-sbinPROGRAMS:
+	-test -z "$(sbin_PROGRAMS)" || rm -f $(sbin_PROGRAMS)
+
+distclean-sbinPROGRAMS:
+
+maintainer-clean-sbinPROGRAMS:
+
+install-sbinPROGRAMS: $(sbin_PROGRAMS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(sbindir)
+	@list='$(sbin_PROGRAMS)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo "  $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
+	     $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+	  else :; fi; \
+	done
+
+uninstall-sbinPROGRAMS:
+	@$(NORMAL_UNINSTALL)
+	list='$(sbin_PROGRAMS)'; for p in $$list; do \
+	  rm -f $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+	done
+
+.c.o:
+	$(COMPILE) -c $<
+
+.s.o:
+	$(COMPILE) -c $<
+
+.S.o:
+	$(COMPILE) -c $<
+
+mostlyclean-compile:
+	-rm -f *.o core *.core
+
+clean-compile:
+
+distclean-compile:
+	-rm -f *.tab.c
+
+maintainer-clean-compile:
+
+utmpdump: $(utmpdump_OBJECTS) $(utmpdump_DEPENDENCIES)
+	@rm -f utmpdump
+	$(LINK) $(utmpdump_LDFLAGS) $(utmpdump_OBJECTS) $(utmpdump_LDADD) $(LIBS)
+
+last: $(last_OBJECTS) $(last_DEPENDENCIES)
+	@rm -f last
+	$(LINK) $(last_LDFLAGS) $(last_OBJECTS) $(last_LDADD) $(LIBS)
+
+wall: $(wall_OBJECTS) $(wall_DEPENDENCIES)
+	@rm -f wall
+	$(LINK) $(wall_LDFLAGS) $(wall_OBJECTS) $(wall_LDADD) $(LIBS)
+
+mesg: $(mesg_OBJECTS) $(mesg_DEPENDENCIES)
+	@rm -f mesg
+	$(LINK) $(mesg_LDFLAGS) $(mesg_OBJECTS) $(mesg_LDADD) $(LIBS)
+
+init: $(init_OBJECTS) $(init_DEPENDENCIES)
+	@rm -f init
+	$(LINK) $(init_LDFLAGS) $(init_OBJECTS) $(init_LDADD) $(LIBS)
+
+runlevel: $(runlevel_OBJECTS) $(runlevel_DEPENDENCIES)
+	@rm -f runlevel
+	$(LINK) $(runlevel_LDFLAGS) $(runlevel_OBJECTS) $(runlevel_LDADD) $(LIBS)
+
+halt: $(halt_OBJECTS) $(halt_DEPENDENCIES)
+	@rm -f halt
+	$(LINK) $(halt_LDFLAGS) $(halt_OBJECTS) $(halt_LDADD) $(LIBS)
+
+shutdown: $(shutdown_OBJECTS) $(shutdown_DEPENDENCIES)
+	@rm -f shutdown
+	$(LINK) $(shutdown_LDFLAGS) $(shutdown_OBJECTS) $(shutdown_LDADD) $(LIBS)
+
+killall5: $(killall5_OBJECTS) $(killall5_DEPENDENCIES)
+	@rm -f killall5
+	$(LINK) $(killall5_LDFLAGS) $(killall5_OBJECTS) $(killall5_LDADD) $(LIBS)
+
+sulogin: $(sulogin_OBJECTS) $(sulogin_DEPENDENCIES)
+	@rm -f sulogin
+	$(LINK) $(sulogin_LDFLAGS) $(sulogin_OBJECTS) $(sulogin_LDADD) $(LIBS)
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP)
+	list='$(SOURCES) $(HEADERS)'; \
+	unique=`for i in $$list; do echo $$i; done | \
+	  awk '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	here=`pwd` && cd $(srcdir) \
+	  && mkid -f$$here/ID $$unique $(LISP)
+
+TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SOURCES) $(HEADERS)'; \
+	unique=`for i in $$list; do echo $$i; done | \
+	  awk '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || (cd $(srcdir) && etags $(ETAGS_ARGS) $$tags  $$unique $(LISP) -o $$here/TAGS)
+
+mostlyclean-tags:
+
+clean-tags:
+
+distclean-tags:
+	-rm -f TAGS ID
+
+maintainer-clean-tags:
+
+distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+
+subdir = src
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  d=$(srcdir); \
+	  if test -d $$d/$$file; then \
+	    cp -pr $$d/$$file $(distdir)/$$file; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+	  fi; \
+	done
+
+info-am:
+info: info-am
+dvi-am:
+dvi: dvi-am
+check-am: all-am
+check: check-am
+installcheck-am:
+installcheck: installcheck-am
+install-exec-am: install-binPROGRAMS install-sbinPROGRAMS
+	@$(NORMAL_INSTALL)
+	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+install-exec: install-exec-am
+
+install-data-am:
+install-data: install-data-am
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+install: install-am
+uninstall-am: uninstall-binPROGRAMS uninstall-sbinPROGRAMS
+uninstall: uninstall-am
+all-am: Makefile $(PROGRAMS) $(HEADERS)
+all-redirect: all-am
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_STRIP_FLAG=-s install
+installdirs:
+	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(sbindir)
+
+
+mostlyclean-generic:
+
+clean-generic:
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES)
+	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+mostlyclean-am:  mostlyclean-binPROGRAMS mostlyclean-sbinPROGRAMS \
+		mostlyclean-compile mostlyclean-tags \
+		mostlyclean-generic
+
+mostlyclean: mostlyclean-am
+
+clean-am:  clean-binPROGRAMS clean-sbinPROGRAMS clean-compile clean-tags \
+		clean-generic mostlyclean-am
+
+clean: clean-am
+
+distclean-am:  distclean-binPROGRAMS distclean-sbinPROGRAMS \
+		distclean-compile distclean-tags distclean-generic \
+		clean-am
+
+distclean: distclean-am
+
+maintainer-clean-am:  maintainer-clean-binPROGRAMS \
+		maintainer-clean-sbinPROGRAMS maintainer-clean-compile \
+		maintainer-clean-tags maintainer-clean-generic \
+		distclean-am
+	@echo "This command is intended for maintainers to use;"
+	@echo "it deletes files that may require special tools to rebuild."
+
+maintainer-clean: maintainer-clean-am
+
+.PHONY: mostlyclean-binPROGRAMS distclean-binPROGRAMS clean-binPROGRAMS \
+maintainer-clean-binPROGRAMS uninstall-binPROGRAMS install-binPROGRAMS \
+mostlyclean-sbinPROGRAMS distclean-sbinPROGRAMS clean-sbinPROGRAMS \
+maintainer-clean-sbinPROGRAMS uninstall-sbinPROGRAMS \
+install-sbinPROGRAMS mostlyclean-compile distclean-compile \
+clean-compile maintainer-clean-compile tags mostlyclean-tags \
+distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
+dvi-am dvi check check-am installcheck-am installcheck install-exec-am \
+install-exec install-data-am install-data install-am install \
+uninstall-am uninstall all-redirect all-am all installdirs \
+mostlyclean-generic distclean-generic clean-generic \
+maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+
+
+@INSTALLUSR_TRUE@  sbindir=/sbin
+
+install-exec-hook:
+	ln -s last $(bindir)/lastb
+	ln -s halt $(sbindir)/reboot
+	ln -s halt $(sbindir)/poweroff
+	ln -s killall5 $(sbindir)/pidof
+	ln -s init $(sbindir)/telinit
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:
