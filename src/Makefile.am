@@ -16,7 +16,7 @@ halt_SOURCES = halt.c utmp.c ifdown.c
 shutdown_SOURCES = dowall.c utmp.c shutdown.c
 wall_SOURCES = dowall.c wall.c
 
-LIBS = @LIBS@ -lsocket
+LIBS = @LIBS@
 
 INCLUDES = -I$(top_srcdir) -I$(srcdir) -I$(top_srcdir)/lib -I..
 
