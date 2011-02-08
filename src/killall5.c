@@ -525,6 +525,7 @@ main (argc, argv)
 	      scripts_too = 1;
 	      break;
 	    default:
+	      break;
 	    }
 	}
       argc -= optind;
@@ -557,6 +558,7 @@ main (argc, argv)
 		  printf ("%d", (int) p->pid);
 		  first = 0;
 		skip:
+		  continue;
 		}
 	    }
 	}

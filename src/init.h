@@ -31,7 +31,7 @@
 /* Prototypes. */
 void write_utmp_wtmp(char *user, char *id, int pid, int type, char *line);
 void write_wtmp(char *user, char *id, int pid, int type, char *line);
-void log(int loglevel, char *fmt, ...);
+void ilog(int loglevel, char *fmt, ...);
 void set_term(int how);
 void print(char *fmt);
 

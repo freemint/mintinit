@@ -168,7 +168,7 @@ list (struct utmp *p, time_t t, int what)
   char logouttime[32];
   char length[32];
   char final[128];
-  char domain[256];
+  char domain[UT_HOSTSIZE+1];
   time_t secs, tmp;
   int mins, hours, days;
   char *s, **walk;
